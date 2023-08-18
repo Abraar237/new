@@ -1,0 +1,70 @@
+# import smtplib
+# my_email="testb3w@gmail.com"
+# password = "fdzyjjytvrbtimhs"
+# with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
+#     connection.starttls()
+#     connection.login(user=my_email,password=password)
+#     connection.sendmail(
+#
+#         from_addr=my_email,
+#         to_addrs="testb3w@yahoo.com",
+#         msg="Subject:Hello\n\nThis is body of email"
+#     )
+
+# import datetime as dt
+#
+# now = dt.datetime.now()
+# time=now.weekday()
+# print(time)
+# DOB=dt.datetime(year=2003,month=3,day=3,hour=3)
+# print(DOB)
+
+import smtplib
+import datetime as dt
+import random
+MY_EMAIL="testb3w@gmail.com"
+PASSWORD = "fdzyjjytvrbtimhs"
+now=dt.datetime.now()
+weekday=now.weekday()
+print(weekday)
+if weekday==1:
+    with open("quotes.txt")as file:
+        text=file.readlines()
+        quote= random.choice(text)
+    with  smtplib.SMTP("smtp.gmail.com",port=587) as connection:
+        connection.starttls()
+        connection.login(user=MY_EMAIL,password=PASSWORD)
+        connection.sendmail(from_addr=MY_EMAIL,
+                            to_addrs="rabrar705@gmail.com",
+                            msg=f"Subject:quote of the day\n\n{quote}")
+
+
+2
+
+
+
+import tkinter
+
+window =tkinter.Tk()
+window.title("Password Keeper")
+window.minsize(500,300)
+
+#LAbel
+my_label = tkinter.Label(text="I am vengence ",font=("Arial",24,"bold") )
+my_label.pack(expand=True)
+
+
+def add(*args):
+    _sum=0
+    for n in args:
+        _sum=_sum+n
+    print(_sum)
+ok=add(4,5,6,7,8,9)
+print(ok)
+
+window.mainloop()
+
+
+3
+
+
